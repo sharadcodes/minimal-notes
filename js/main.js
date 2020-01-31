@@ -17,7 +17,7 @@ function getDbSchema() {
 
 
 // executing jsstore inside a web worker
-var connection = new JsStore.Connection(new Worker('./jsstore.worker.js'));
+var connection = new JsStore.Connection(new Worker('minimal-notes/js/jsstore.worker.js'));
 
 async function initMyNote() {
       var database = getDbSchema();
