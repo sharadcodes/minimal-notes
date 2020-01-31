@@ -3,7 +3,7 @@ function getDbSchema() {
   var tblNotes = {
     name: 'my_notes_table',
     columns: {
-        // Here "id" is name of column 
+        // Here "Id" is name of column 
         id:{ primaryKey: true, autoIncrement: true },
         noteText:  { notNull: true, dataType: "string" }
     }
@@ -16,6 +16,7 @@ function getDbSchema() {
 }
 
 
+// executing jsstore inside a web worker
 var connection = new JsStore.Connection();
 
 async function initMyNote() {
