@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MINIMAL NOTES</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="js/jsstore.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="js/jsstore.worker.js" type="text/javascript" charset="utf-8" async defer></script>
+</head>	
+<body onload="initMyNote()">
+
+	<main>
+		<h1>MINIMAL NOTES</h1>
+		<p>
+			Developed by <a href="https://sharadcodes.github.io" title="Sharad Raj">Sharad Raj</a>
+		</p>
+
+		<p id="status"></p>			
+		
+		<nav>
+			<textarea rows="5" id="note_text"></textarea>
+			<br/>
+			<br/>
+			
+		</nav>		
+
+		<div style="display: flex; justify-content: space-evenly;">
+			<button id="btn_save" onclick="newNote()">SAVE</button>
+			<button id="btn_save" onclick="removeAllNotes()">REMOVE ALL</button>
+		</div>
+
+		<div id="new_note_status"></div>
+
+		<h4>INSTRUCTIONS: <br> CLICK ON THE NOTE TO DELETE</h4>
+
+		<section id="notes">
+			
+		</section>
+	</main>
+
+	<script src="js/main.js" type="text/javascript" charset="utf-8" async defer></script>
+</body>
+</html>

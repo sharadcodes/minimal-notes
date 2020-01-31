@@ -1,0 +1,60 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+body *{
+	font-family: monospace;
+}
+
+button {
+	padding: 5px 20px;
+	font-size: 12px
+}
+
+main {
+	max-width: 600px;
+	margin: 10px auto;
+	padding: 1rem;
+}
+
+nav{
+	margin: 20px 0;
+}
+
+textarea{
+	width: 100%;
+	max-width: 100%;
+	min-width: 100%;
+	padding: 5px;
+}
+
+#status {
+	color: white;
+	text-align: center;
+	padding: 5px;
+	margin: 20px 0px;
+}
+
+#new_note_status {
+	color: white;
+	text-align: center;
+	padding: 5px;
+	margin: 20px 0px;
+}
+
+.note {
+	border: 1px solid black;
+	padding: 1rem;
+	margin: 1rem 0;
+	cursor: pointer;
+}
+
+.note:hover {
+	border-color: red; 
+}
+
+.note p {
+	margin-top: 10px;
+}
