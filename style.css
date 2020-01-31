@@ -62,5 +62,6 @@ textarea{
 @media screen and (max-width: 1000px){
 main {
  width: 100vw !important;
+ margin: 0px 0px;
 }
 }
