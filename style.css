@@ -58,3 +58,9 @@ textarea{
 .note p {
 	margin-top: 10px;
 }
+
+@media screen and (max-width: 1000px){
+main {
+ width: 100vw !important;
+}
+}
