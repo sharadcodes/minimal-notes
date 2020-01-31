@@ -16,7 +16,6 @@ function getDbSchema() {
 }
 
 
-// executing jsstore inside a web worker
 var connection = new JsStore.Connection();
 
 async function initMyNote() {
