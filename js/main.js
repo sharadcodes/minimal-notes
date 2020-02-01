@@ -1,11 +1,12 @@
-var dbName ='my_notes_db';
+var dbName ='minimal_notes_db';
 function getDbSchema() {
   var tblNotes = {
     name: 'my_notes_table',
     columns: {
         // Here "Id" is name of column 
         id:{ primaryKey: true, autoIncrement: true },
-        noteText:  { notNull: true, dataType: "string" }
+        noteText:  { notNull: true, dataType: "string" },
+        noteDate: { notNull: true, dataType: "date_time" }
     }
   };
   var db = {
@@ -36,7 +37,15 @@ async function initMyNote() {
 }
 
 async function newNote() {
-  var new_note_value = { noteText : document.getElementById("note_text").value.replace(/\n\r?/g, '<br />') };
+  
+  var today = new Date();
+
+  var new_note_value = 
+  { 
+    noteText : document.getElementById("note_text").value.replace(/\n\r?/g, '<br />') ,
+    noteDate: today
+  };
+
   var noOfDataInserted = await connection.insert({
       into: 'my_notes_table',
       values: [new_note_value]
@@ -68,13 +77,13 @@ function newNoteWithHtml(note_id, note_text, note_date){
 }
 
 async function getAllNotes() {
-  var results = await connection.select({ from: "my_notes_table" });
+  var results = await connection.select({ from: "my_notes_table", order: { by: "id", type: "desc" } });
   var note_container = document.getElementById("notes");
   note_container.innerHTML = "";
 
   var temp_html = "";
   results.forEach(i => {
-    note_container.appendChild(newNoteWithHtml(i.id,i.noteText,"xx-xx-xxxx"));
+    note_container.appendChild(newNoteWithHtml(i.id, i.noteText, i.noteDate));
   })
 
 }
